@@ -27,11 +27,8 @@ print(employee_salaries['DESC'])
 ################################################################################
 # Then we load it:
 import pandas as pd
-df = data = employee_salaries['data']
+df = employee_salaries['data']
 
-# Test if load was unsuccesful
-if '"code" : "authentication_required"' in str(df.iloc[0]):
-    raise IOError
 ################################################################################
 # Now, let's carry out some basic preprocessing:
 df['Current Annual Salary'] = df['Current Annual Salary'].str.strip('$').astype(
